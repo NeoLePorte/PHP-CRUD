@@ -67,21 +67,29 @@
 
     <div class="row justify-content-center">
         <form action="process.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id;?>">
             <div class="form-group">
                     <!-- Book Title Input -->
                 <label for="BookTitle">Book Title</label>
                 <input type="text"
-                class="form-control" name="BookTitle" id="" aria-describedby="helpId" placeholder="Enter Book Here">
+                class="form-control" name="BookTitle" id="" aria-describedby="helpId" value="<?php echo $BookTitle; ?>" placeholder="Enter Book Here">
             </div>
             <div class="form-group">
                     <!-- Book Description Input -->
                 <label for="BookDescription">Book Description</label>
-                <textarea class="form-control" name="BookDescription" id="" rows="3" placeholder="Enter Description Here"></textarea>
+                <textarea class="form-control" name="BookDescription" id="" rows="3" value="<?php echo $BookDescription; ?>" placeholder="Enter Description Here"></textarea>
                 <small id="helpId" class="form-text text-muted">Enter the name of the book and a short description.</small>
             </div>
                     <!-- Save button -->
             <div class="form-group">
+            <?php
+                if ($update == true):
+            ?>
+             <button type="submit" name="update" class="btn btn-info">Update</button>
+
+                <?php else: ?>
                 <button type="submit" name="save" class="btn btn-primary">Save</button>
+                <?php endif ?>
             </div>
         </form>
     </div>
