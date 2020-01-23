@@ -34,7 +34,10 @@
                 <tr>
                     <td scope="row"><?php echo $row['book_title']?></td>
                     <td scope="row"><?php echo $row['book_description']?></td>
-                    <td></td>
+                    <td>
+                        <a hreft="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a>
+                        <a hreft="process.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
                 <?php endwhile; ?>
         </table>
